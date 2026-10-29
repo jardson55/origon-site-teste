@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Importação em Cotas | ORIGON Brasil Imports</title>
+  <meta name="description" content="Importação da China em cotas: o valor do contêiner é dividido entre cotistas, com orientação em cada etapa e custos rateados de forma transparente.">
+  <meta name="theme-color" content="#091b31">
+  <link rel="icon" type="image/png" href="assets/favicon-origon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/importacao.css?v=4">
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="ORIGON Brasil Imports - página inicial">
+        <img src="assets/logo-origon.png" alt="ORIGON Brasil Imports" width="150" height="44">
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="nav" id="menu" aria-label="Principal">
+        <ul>
+          <li><a class="nav-link" href="index.html">Início</a></li>
+          <li><a class="nav-link" href="importacao-em-cotas.html" aria-current="page">Importação em Cotas</a></li>
+          <li><a class="nav-link" href="regras-de-importacao.html">Regras de Importação</a></li>
+          <li><a class="nav-link" href="criacao-de-sites.html">Criação de Sites</a></li>
+          <li><a class="nav-link" href="contato.html">Contato</a></li>
+        </ul>
+        <a class="btn btn--primary btn--sm" href="contato.html" data-quote>Solicitar orçamento</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero hero--page">
+      <div class="container">
+        <span class="eyebrow">Importação em Cotas</span>
+        <h1>Um contêiner da China dividido entre cotistas.</h1>
+        <p class="lead">Em vez de arcar sozinho com um contêiner inteiro, você participa com a sua cota. A ORIGON organiza a compra, a documentação e o acompanhamento até a entrega.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="contato.html" data-quote>Quero participar de uma cota</a>
+          <a class="btn btn--ghost" href="#simulador">Simular minha cota</a>
+        </div>
+        <img class="hero-art hero-art--sm" src="assets/navio-conteineres.svg?v=2" alt="" width="760" height="400" aria-hidden="true">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div>
+          <span class="eyebrow">O modelo</span>
+          <h2>Como funciona a importação em cotas</h2>
+          <p>No nosso modelo de referência, um contêiner tem valor total de <strong>US$ 50 mil</strong> em mercadoria (valor FOB, na origem). Esse valor é dividido entre alguns cotistas: cada um participa com a sua parte e recebe a mercadoria correspondente.</p>
+          <p>Os custos da operação, como frete, tributos, taxas e despachante, são levantados por embarque e <strong>rateados entre os cotistas</strong>, com planilha por cota para você acompanhar.</p>
+          <p>Temos equipe atuando <strong>no Brasil e na China</strong>, dando suporte da negociação com o fornecedor até a chegada da carga.</p>
+        </div>
+        <div class="panel">
+          <h3>Mais acessível, mais organizado</h3>
+          <p>Com a divisão em cotas, a entrada deixa de ser o valor do contêiner inteiro e passa a ser a sua cota. A ORIGON cuida do processo e orienta cada exigência.</p>
+          <a class="btn btn--primary" href="contato.html" data-quote>Solicitar orçamento</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="simulador">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Simulador</span>
+          <h2>Quanto custa a mercadoria de uma cota?</h2>
+          <p>Simulação ilustrativa: divide o valor da mercadoria do contêiner entre os cotistas. Ajuste o valor total e o número de cotas de cada embarque.</p>
+        </div>
+        <div class="calc">
+          <form class="calc-form" id="calc-form" novalidate>
+            <label for="calc-total">Valor total da mercadoria no contêiner (US$)</label>
+            <input id="calc-total" type="number" inputmode="decimal" min="0" step="100" value="50000">
+            <label for="calc-cotas">Número de cotistas</label>
+            <input id="calc-cotas" type="number" inputmode="numeric" min="1" max="50" step="1" value="5">
+            <label for="calc-cambio">Câmbio para estimar em reais (opcional)</label>
+            <input id="calc-cambio" type="number" inputmode="decimal" min="0" step="0.01" placeholder="Ex.: informe a cotação do dia">
+            <p class="dica">Informe a cotação do dólar do dia. O câmbio real é o do momento do pagamento.</p>
+          </form>
+          <div class="calc-saida" aria-live="polite">
+            <div class="rotulo">Mercadoria por cota</div>
+            <div class="valor" id="saida-usd">—</div>
+            <div class="linha" id="linha-brl" hidden><div class="rotulo">Em reais (estimativa)</div><div class="valor" id="saida-brl">—</div></div>
+            <p class="nota" data-erro id="saida-erro"></p>
+            <p class="nota" id="saida-radar"></p>
+            <p class="nota">Não inclui frete internacional, seguro, tributos, taxas, despachante e despesas no Brasil. Esses custos dependem do produto, do câmbio e das despesas reais, e são rateados entre os cotistas conforme o orçamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Passo a passo</span>
+          <h2>Da cota ao recebimento da mercadoria</h2>
+        </div>
+        <ol class="steps steps--auto">
+          <li><h3>Escolha do produto e da cota</h3><p>Você conta o que quer importar e escolhe a sua cota em um contêiner em formação.</p></li>
+          <li><h3>Habilitação para importar</h3><p>Orientamos CNPJ, certificado digital e habilitação no Siscomex (RADAR), conforme a sua situação.</p></li>
+          <li><h3>Contrato e pagamento</h3><p>Formalizamos a sua participação e organizamos os pagamentos da cota.</p></li>
+          <li><h3>Compra e produção</h3><p>Equipe na China acompanha o fornecedor, a produção e o embarque.</p></li>
+          <li><h3>Transporte e desembaraço</h3><p>Despachante aduaneiro, tributos e taxas, com custos rateados por cotista.</p></li>
+          <li><h3>Entrega</h3><p>A mercadoria chega a você, com o fechamento do rateio conferido.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Mais fácil e confiável</span>
+          <h2>Como facilitamos para os cotistas</h2>
+        </div>
+        <div class="grid grid--3">
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6l8-3z"/><path d="M8.5 12l2.5 2.5L15.5 10"/></svg></div>
+            <h3>Processo transparente</h3>
+            <p>Contrato da sua participação, planilha de custos por cotista e acompanhamento de cada etapa do embarque.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 6h13M8 12h13M8 18h13"/><path d="M3.5 6h.01M3.5 12h.01M3.5 18h.01"/></svg></div>
+            <h3>Burocracia organizada</h3>
+            <p>Checklist de CNPJ, certificado, RADAR, despachante, NCM e licenças para você saber o que falta em cada etapa.</p>
+          </article>
+          <article class="card">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></div>
+            <h3>Brasil e China</h3>
+            <p>Equipe atuando nos dois países para dar suporte da negociação com o fornecedor até a chegada da carga.</p>
+          </article>
+        </div>
+        <p class="note">A forma como cada cotista importa (em nome próprio, por conta e ordem ou por encomenda) é definida em contrato, com orientação de contador e despachante aduaneiro. Veja as <a href="regras-de-importacao.html">regras de importação</a>.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-band">
+          <div>
+            <h2>Pronto para participar de um contêiner?</h2>
+            <p>Solicite um orçamento e conte qual produto você quer importar.</p>
+          </div>
+          <a class="btn btn--primary" href="contato.html" data-quote>Solicitar orçamento</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="fab-orcamento" href="contato.html" data-quote aria-label="Solicitar orçamento">
+    <span class="fab-rotulo">Solicitar orçamento</span>
+    <span class="fab-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9h8M8 12h5"/></svg></span>
+  </a>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/logo-origon.png" alt="ORIGON Brasil Imports" width="150" height="44">
+          <p>Tecnologia · Segurança · Qualidade · Importação</p>
+          <p>Empresa parceira: MouraTech Informática</p>
+        </div>
+        <div>
+          <h3>Navegação</h3>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="importacao-em-cotas.html">Importação em Cotas</a></li>
+            <li><a href="regras-de-importacao.html">Regras de Importação</a></li>
+            <li><a href="criacao-de-sites.html">Criação de Sites</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contato</h3>
+          <ul>
+            <li><a href="contato.html">Fale com a ORIGON</a></li>
+            <li><a href="contato.html" data-quote>Solicitar orçamento</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="legal"><strong>ORIGON BRASIL IMPORTACAO, DISTRIBUICAO E COMERCIO LTDA</strong> · CNPJ 69.349.407/0001-25 · Embu das Artes/SP · <a href="https://solucoes.receita.fazenda.gov.br/servicos/cnpjreva/cnpjreva_solicitacao.asp" target="_blank" rel="noopener">Consultar CNPJ na Receita Federal</a></p>
+        <p>© 2026 ORIGON Brasil Imports. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js?v=3"></script>
+  <script src="js/cotas.js"></script>
+</body>
+</html>
