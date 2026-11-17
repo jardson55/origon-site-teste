@@ -1,12 +1,16 @@
 // Canais de contato do site. NÃO inventar valores: preencher somente com dados confirmados.
 // WhatsApp: somente dígitos com código do país e DDD (ex.: "55" + DDD + número).
-// Enquanto estiverem vazios, o site mostra "em breve" e os botões levam à página de contato.
 window.ORIGON_CONFIG = {
-  // Abre somente pelo botão "Chamar no WhatsApp" da página de contato.
+  // Todos os botões "Solicitar orçamento" e "Chamar no WhatsApp" abrem este número.
   whatsapp: "5511987862910",
   email: "",
-  // Destino dos botões "Solicitar orçamento" (CRM). Informar a URL do formulário/página do CRM.
-  // Vazio = os botões levam à página de contato do próprio site.
+  // Opcional: se um dia o CRM tiver formulário público, informe a URL https. Vazio = orçamento pelo WhatsApp.
   crmUrl: "",
-  mensagemWhatsapp: "Olá! Vim pelo site da ORIGON e gostaria de mais informações."
+  // Mensagem inicial da conversa, conforme o assunto do botão (data-assunto).
+  mensagens: {
+    geral: "Olá! Vim pelo site da ORIGON e gostaria de mais informações.",
+    importacao: "Olá! Vim pelo site da ORIGON e gostaria de solicitar um orçamento de importação da China em cotas.",
+    viagem: "Olá! Vim pelo site da ORIGON e gostaria de uma cotação de viagem.",
+    site: "Olá! Vim pelo site da ORIGON e gostaria de solicitar um orçamento de criação ou manutenção de site, ou de CRM."
+  }
 };

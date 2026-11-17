@@ -27,30 +27,50 @@
     });
   }
 
-  // Botões "Solicitar orçamento": CRM se configurado; senão, página de contato.
+  // Link do WhatsApp com mensagem conforme o assunto (geral, importacao, site).
+  function linkWhatsapp(assunto) {
+    var m = cfg.mensagens || {};
+    var texto = m[assunto] || m.geral || "";
+    return "https://wa.me/" + digits + (texto ? "?text=" + encodeURIComponent(texto) : "");
+  }
+  function abrirEmNovaAba(a, href) {
+    a.href = href;
+    a.target = "_blank";
+    a.rel = "noopener";
+  }
+
+  // Botões "Solicitar orçamento": CRM, se configurado; senão WhatsApp; senão página de contato.
   var crm = String(cfg.crmUrl || "").trim();
   document.querySelectorAll("[data-quote]").forEach(function (a) {
-    if (/^https:\/\//i.test(crm)) {
-      a.href = crm;
-      a.target = "_blank";
-      a.rel = "noopener";
-    }
+    if (/^https:\/\//i.test(crm)) abrirEmNovaAba(a, crm);
+    else if (digits) abrirEmNovaAba(a, linkWhatsapp(a.getAttribute("data-assunto") || "importacao"));
   });
 
-  // Página de contato: o WhatsApp só abre por este botão.
-  var wa = document.querySelector("[data-contact-whatsapp]");
-  if (wa && digits) {
-    wa.textContent = "Chamar no WhatsApp";
-    wa.href = "https://wa.me/" + digits + "?text=" + encodeURIComponent(cfg.mensagemWhatsapp || "");
-    wa.target = "_blank";
-    wa.rel = "noopener";
+  // Botões "Chamar no WhatsApp" (conversa geral ou por assunto).
+  document.querySelectorAll("[data-contact-whatsapp]").forEach(function (wa) {
+    if (!digits) return;
+    abrirEmNovaAba(wa, linkWhatsapp(wa.getAttribute("data-assunto") || "geral"));
     wa.removeAttribute("data-empty");
-  }
+  });
+
+  // Número formatado, ex.: (11) 98786-2910.
+  var d = digits.replace(/^55/, "");
+  var fmt = d.length === 11 ? "(" + d.slice(0, 2) + ") " + d.slice(2, 7) + "-" + d.slice(7)
+          : d.length === 10 ? "(" + d.slice(0, 2) + ") " + d.slice(2, 6) + "-" + d.slice(6) : "";
+  document.querySelectorAll("[data-whatsapp-numero]").forEach(function (el) {
+    if (fmt) el.textContent = fmt;
+  });
+  document.querySelectorAll("[data-whatsapp-link]").forEach(function (a) {
+    if (digits) { abrirEmNovaAba(a, linkWhatsapp("geral")); a.hidden = false; }
+  });
+
   var em = document.querySelector("[data-contact-email]");
   if (em && email) {
     em.textContent = email;
     em.href = "mailto:" + email;
     em.removeAttribute("data-empty");
+    var cartaoEmail = em.closest("[data-contact-email-card]");
+    if (cartaoEmail) cartaoEmail.hidden = false;
   }
 
   // Entrada suave dos blocos ao rolar (sem JS ou com movimento reduzido, tudo fica visível).
@@ -67,5 +87,25 @@
       el.classList.add("reveal");
       io.observe(el);
     });
+  }
+
+  // Marca d'água em movimento: desloca de leve ao rolar (desligado com movimento reduzido).
+  if (!reduz) {
+    var marcas = document.querySelectorAll(".hero, .viagens, .section--soft, .cta-band, .site-footer");
+    var ticking = false;
+    var atualizar = function () {
+      var vh = window.innerHeight;
+      marcas.forEach(function (el) {
+        var r = el.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) return;
+        var centro = (r.top + r.height / 2 - vh / 2) / vh;
+        el.style.setProperty("--py", Math.round(centro * -40) + "px");
+      });
+      ticking = false;
+    };
+    window.addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; window.requestAnimationFrame(atualizar); }
+    }, { passive: true });
+    atualizar();
   }
 })();

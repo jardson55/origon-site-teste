@@ -2,17 +2,26 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="robots" content="noindex, nofollow">
-  <title>ORIGON Brasil Imports</title>
+  <title>ORIGON Brasil Imports | Importação da China em cotas</title>
   <meta name="description" content="Importe da China em cotas com a ORIGON: dividimos o contêiner entre cotistas e orientamos cada etapa, do CNPJ ao desembaraço.">
   <meta name="theme-color" content="#091b31">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="ORIGON Brasil Imports">
+  <meta property="og:title" content="ORIGON Brasil Imports | Importação da China em cotas">
+  <meta property="og:description" content="Importe da China em cotas com a ORIGON: dividimos o contêiner entre cotistas e orientamos cada etapa, do CNPJ ao desembaraço.">
+  <meta property="og:image" content="https://jardson55.github.io/origon-site-teste/assets/og-origon.png">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="assets/favicon-origon.png">
+  <link rel="apple-touch-icon" href="assets/favicon-origon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/importacao.css?v=5">
+  <link rel="stylesheet" href="css/importacao.css?v=6">
+  <link rel="stylesheet" href="css/marca.css?v=5">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -30,7 +39,8 @@
           <li><a class="nav-link" href="index.html" aria-current="page">Início</a></li>
           <li><a class="nav-link" href="importacao-em-cotas.html">Importação em Cotas</a></li>
           <li><a class="nav-link" href="regras-de-importacao.html">Regras de Importação</a></li>
-          <li><a class="nav-link" href="criacao-de-sites.html">Criação de Sites</a></li>
+          <li><a class="nav-link" href="index.html#viagens">Viagens</a></li>
+          <li><a class="nav-link" href="criacao-de-sites.html">Sites e CRM</a></li>
           <li><a class="nav-link" href="contato.html">Contato</a></li>
         </ul>
         <a class="btn btn--primary btn--sm" href="contato.html" data-quote>Solicitar orçamento</a>
@@ -42,12 +52,17 @@
     <section class="hero">
       <div class="container">
         <span class="eyebrow">Importação da China em cotas</span>
-        <h1>Agora ficou mais fácil fazer a sua importação.</h1>
+        <h1>Agora ficou mais fácil fazer a sua <span class="grad">importação.</span></h1>
         <p class="lead">Dividimos o contêiner entre cotistas e orientamos cada etapa, do CNPJ ao desembaraço. Temos equipe no Brasil e na China dando suporte ao seu processo.</p>
         <div class="hero-actions">
           <a class="btn btn--primary" href="contato.html" data-quote>Solicitar orçamento</a>
           <a class="btn btn--ghost" href="importacao-em-cotas.html">Como funcionam as cotas</a>
         </div>
+        <ul class="chips" aria-label="Destaques">
+          <li>Contêiner dividido em cotas</li>
+          <li>Equipe no Brasil e na China</li>
+          <li>Orçamento pelo WhatsApp</li>
+        </ul>
         <img class="hero-art" src="assets/navio-conteineres.svg?v=2" alt="" width="760" height="400" aria-hidden="true">
       </div>
     </section>
@@ -91,7 +106,121 @@
       </div>
     </section>
 
-    <section class="section section--soft">
+    <section class="viagens" id="viagens">
+      <div class="container viagens-grid">
+        <div class="viagens-txt">
+          <span class="eyebrow">Agência de viagens</span>
+          <h2>Também providenciamos a sua viagem, <span class="grad">com segurança.</span></h2>
+          <p>Passagem, hotel, transfer e seguro organizados por um consultor, do primeiro orçamento ao retorno. Preencha a cotação ao lado ou fale direto com a gente pelo WhatsApp.</p>
+          <ul class="viagens-lista" aria-label="O que organizamos">
+            <li>Passagens aéreas</li><li>Hotéis</li><li>Pacotes</li><li>Transfer</li><li>Seguro viagem</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="#cotacao-viagem">Preencher cotação</a>
+            <a class="btn btn--ghost" href="contato.html" data-quote data-assunto="viagem">Falar direto no WhatsApp</a>
+          </div>
+          <img class="viagens-art" src="assets/viagem-aviao.svg" alt="" width="720" height="400" loading="lazy">
+        </div>
+        <form class="form-card form-card--viagem" id="cotacao-viagem" data-form-whatsapp data-assunto="viagem" novalidate>
+          <h3>Solicite a sua cotação de viagem</h3>
+          <p class="form-sub">Preencha e abrimos o WhatsApp com os dados prontos. Sem cadastro e sem compromisso.</p>
+          <div class="campo campo--full"><label for="v-nome">Seu nome *</label><input id="v-nome" name="nome" type="text" autocomplete="name" required></div>
+          <div class="campo campo--full"><label for="v-tipo">O que você quer cotar?</label>
+            <select id="v-tipo" name="tipo"><option>Pacote de viagem</option><option>Passagem aérea</option><option>Hotel</option><option>Passagem + hotel</option><option>Transfer</option><option>Seguro viagem</option></select></div>
+          <fieldset class="dados-viagem"><legend>Dados da viagem</legend>
+            <div class="form-grid">
+              <div class="campo"><label for="v-origem">Cidade ou aeroporto de origem *</label><input id="v-origem" name="origem" type="text" required></div>
+              <div class="campo"><label for="v-destino">Destino *</label><input id="v-destino" name="destino" type="text" required></div>
+              <div class="campo"><label for="v-ida">Data de ida / início</label><input id="v-ida" name="ida" type="date"></div>
+              <div class="campo"><label for="v-volta">Data de volta / término</label><input id="v-volta" name="volta" type="date"></div>
+              <label class="check campo--full"><input type="checkbox" name="somenteIda"> Somente ida / sem data de retorno</label>
+              <div class="campo campo--3"><label for="v-adultos">Adultos</label><input id="v-adultos" name="adultos" type="number" inputmode="numeric" min="1" max="9" value="1"></div>
+              <div class="campo campo--3"><label for="v-criancas">Crianças</label><input id="v-criancas" name="criancas" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
+              <div class="campo campo--3"><label for="v-bebes">Bebês</label><input id="v-bebes" name="bebes" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
+              <div class="campo campo--full"><label for="v-classe">Classe da cabine</label>
+                <select id="v-classe" name="classe"><option>Econômica</option><option>Premium econômica</option><option>Executiva</option><option>Primeira classe</option><option>Ainda não sei</option></select></div>
+              <div class="campo campo--full"><label for="v-idades">Idades das crianças ou dos segurados (opcional)</label><input id="v-idades" name="idades" type="text" placeholder="Ex.: 4 e 9 anos"></div>
+              <label class="check campo--full"><input type="checkbox" name="flexivel"> Posso viajar até 3 dias antes ou depois</label>
+            </div>
+          </fieldset>
+          <div class="campo campo--full campo--obs"><label for="v-obs">Observações (opcional)</label><textarea id="v-obs" name="obs" rows="3" placeholder="Bagagem, hotel preferido, orçamento, outras necessidades..."></textarea></div>
+          <button class="btn btn--whatsapp btn--block" type="submit">Enviar cotação pelo WhatsApp</button>
+          <p class="form-erro" role="alert" hidden></p>
+          <p class="form-nota">Ao enviar, o WhatsApp abre com a sua mensagem. O site não guarda os dados digitados. Valores e condições são informados na cotação.</p>
+        </form>
+      </div>
+    </section>
+
+    <section class="section section--soft" id="clientes">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Nossos clientes</span>
+          <h2>Sites e sistemas que já estão no ar</h2>
+          <p>Veja como ficaram os projetos de clientes da ORIGON. Clique para conhecer.</p>
+        </div>
+        <div class="cc" data-carousel role="region" aria-roledescription="carrossel" aria-label="Nossos clientes">
+          <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="grad-aline" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="210" y2="130"><stop offset="0" stop-color="#EAD693"/><stop offset=".55" stop-color="#C7A24C"/><stop offset="1" stop-color="#9E7A2E"/></linearGradient>
+              <symbol id="am-mark" viewBox="0 0 210 130">
+        <g class="ld" stroke-width="2.6"><path d="M48 3 h10 v9 h-10 z"/><path d="M51 3 v9 M55 3 v9"/><path d="M53 12 v5"/></g>
+        <circle class="ld" cx="53" cy="26" r="9" stroke-width="4.5"/>
+        <path class="ld" d="M48 34 L18 104" stroke-width="6"/><path class="ld" d="M18 104 l-3 9" stroke-width="3"/><path class="ld" d="M58 34 L88 112" stroke-width="6"/>
+        <g class="ld" stroke-width="2.4"><path d="M28 70 l-8 -3 M25 66 l0 7"/><path d="M78 72 l8 -3 M81 68 l0 7"/></g>
+        <path class="ld" d="M2 58 C 28 86, 80 86, 102 60" stroke-width="4.2"/>
+        <path class="ldp" fill-rule="evenodd" d="M102 20 H148 C168 20 177 34 177 51 C177 68 168 82 148 82 H120 V107 H126 V112 H102 V107 H111 V25 H102 Z M120 29 H147 C158 29 168 38 168 51 C168 64 158 72 147 72 H120 Z"/>
+        <path class="ld" style="stroke:#0B1A3A" d="M76 116 C 102 92, 126 62, 146 32" stroke-width="8"/>
+        <path class="ld" d="M76 116 C 102 92, 126 62, 146 32" stroke-width="4"/>
+        <g class="ldf"><path d="M53 46 l4 8 8 4 -8 4 -4 8 -4 -8 -8 -4 8 -4 z"/><path style="fill:#C7A24C;stroke:#0B1A3A;stroke-width:1.6" d="M150 26 l-16 4 7 3 3 7 z"/></g>
+      </symbol>
+            </defs>
+          </svg>
+          <div class="cc-marquee" aria-hidden="true">
+            <div class="cc-marquee-track">
+              <span class="chip chip--r360"><img src="assets/clientes/radiologia360-icone.png" alt="" width="144" height="144" loading="lazy"><b>Radiologia 360</b></span><span class="chip chip--aline"><svg viewBox="0 0 210 130"><use href="#am-mark"/></svg><b>ALINE PEIXINHO</b></span><span class="chip chip--tt"><img src="assets/clientes/traveltour.png" alt="" width="640" height="187" loading="lazy"></span><span class="chip chip--r360"><img src="assets/clientes/radiologia360-icone.png" alt="" width="144" height="144" loading="lazy"><b>Radiologia 360</b></span><span class="chip chip--aline"><svg viewBox="0 0 210 130"><use href="#am-mark"/></svg><b>ALINE PEIXINHO</b></span><span class="chip chip--tt"><img src="assets/clientes/traveltour.png" alt="" width="640" height="187" loading="lazy"></span>
+            </div>
+          </div>
+          <div class="cc-track" tabindex="0" aria-label="Clientes, deslize para ver os próximos">
+            <a class="cc-slide" href="https://radiologia360.com.br/" target="_blank" rel="noopener">
+              <div class="cc-visual cc-visual--r360"><img src="assets/clientes/radiologia360.jpg" alt="" width="800" height="500" loading="lazy"></div>
+              <div class="cc-body">
+                <h3>Radiologia 360</h3>
+                <p>Portal de artigos técnicos e manuais para profissionais e estudantes de radiologia.</p>
+                <span class="cliente-ir">Visitar site<span class="sr-only"> (abre em nova aba)</span></span>
+              </div>
+            </a>
+            <a class="cc-slide" href="https://alinepeixinho.com.br/" target="_blank" rel="noopener">
+              <div class="cc-visual cc-visual--aline"><svg class="am" viewBox="0 0 210 130" aria-hidden="true"><use href="#am-mark"/></svg><span class="am-txt"><b>ALINE PEIXINHO</b><span>Engenharia</span></span></div>
+              <div class="cc-body">
+                <h3>Aline Peixinho Engenharia</h3>
+                <p>Perícias, laudos e avaliações imobiliárias em Embu das Artes/SP.</p>
+                <span class="cliente-ir">Visitar site<span class="sr-only"> (abre em nova aba)</span></span>
+              </div>
+            </a>
+            <a class="cc-slide" href="https://traveltourbrasil.com.br/" target="_blank" rel="noopener">
+              <div class="cc-visual cc-visual--tt"><img src="assets/clientes/traveltour.png" alt="" width="640" height="187" loading="lazy"></div>
+              <div class="cc-body">
+                <h3>Travel Tour Brasil</h3>
+                <p>Agência de viagens: passagens, milhas, hotéis e pacotes, com atendimento por WhatsApp.</p>
+                <span class="cliente-ir">Visitar site<span class="sr-only"> (abre em nova aba)</span></span>
+              </div>
+            </a>
+          </div>
+          <div class="cc-controls">
+            <button class="cc-btn" type="button" data-cc-prev aria-label="Cliente anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+            <div class="cc-dots" role="group" aria-label="Escolher cliente">
+              <button class="cc-dot" type="button" aria-label="Radiologia 360" aria-current="true"></button>
+              <button class="cc-dot" type="button" aria-label="Aline Peixinho Engenharia" aria-current="false"></button>
+              <button class="cc-dot" type="button" aria-label="Travel Tour Brasil" aria-current="false"></button>
+            </div>
+            <button class="cc-btn" type="button" data-cc-next aria-label="Próximo cliente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+            <button class="cc-pause" type="button" data-cc-pause aria-pressed="false"><span class="cc-pause-ico" aria-hidden="true"></span><span data-cc-pause-txt>Pausar movimento</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
       <div class="container">
         <div class="section-head center">
           <span class="eyebrow">Parceria e tecnologia</span>
@@ -104,7 +233,7 @@
           </div>
           <div class="partner-sep" aria-hidden="true"></div>
           <div class="partner-col">
-            <img src="assets/logo-mouratech.png" alt="MouraTech Informática" width="332" height="72">
+            <a class="partner-link" href="https://www.instagram.com/igormouratech/" target="_blank" rel="noopener" aria-label="MouraTech Informática no Instagram (abre em nova aba)"><img src="assets/logo-mouratech.png" alt="MouraTech Informática" width="332" height="72"></a>
             <p>Tecnologia · Inovação · Conectividade · Performance</p>
           </div>
         </div>
@@ -148,12 +277,12 @@
           </div>
           <a class="btn btn--primary" href="contato.html" data-quote>Solicitar orçamento</a>
         </div>
-        <p class="note">Precisa também de um site para a sua empresa? Conheça nossa <a href="criacao-de-sites.html">criação de sites a partir de R$ 500</a>.</p>
+        <p class="note">Precisa de um site, da manutenção dele ou de um CRM? Conheça a <a href="criacao-de-sites.html">criação e manutenção de sites e CRM, com sites a partir de R$ 500</a>.</p>
       </div>
     </section>
   </main>
 
-  <a class="fab-orcamento" href="contato.html" data-quote aria-label="Solicitar orçamento">
+  <a class="fab-orcamento" href="contato.html" data-quote aria-label="Solicitar orçamento pelo WhatsApp (abre em nova aba)">
     <span class="fab-rotulo">Solicitar orçamento</span>
     <span class="fab-icone" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9h8M8 12h5"/></svg></span>
   </a>
@@ -164,7 +293,7 @@
         <div>
           <img src="assets/logo-origon.png" alt="ORIGON Brasil Imports" width="150" height="44">
           <p>Tecnologia · Segurança · Qualidade · Importação</p>
-          <p>Empresa parceira: MouraTech Informática</p>
+          <p>Empresa parceira: <a href="https://www.instagram.com/igormouratech/" target="_blank" rel="noopener">MouraTech Informática<span class="sr-only"> (Instagram, abre em nova aba)</span></a></p>
         </div>
         <div>
           <h3>Navegação</h3>
@@ -172,13 +301,15 @@
             <li><a href="index.html">Início</a></li>
             <li><a href="importacao-em-cotas.html">Importação em Cotas</a></li>
             <li><a href="regras-de-importacao.html">Regras de Importação</a></li>
-            <li><a href="criacao-de-sites.html">Criação de Sites</a></li>
+            <li><a href="index.html#viagens">Viagens</a></li>
+            <li><a href="criacao-de-sites.html">Sites e CRM</a></li>
           </ul>
         </div>
         <div>
           <h3>Contato</h3>
           <ul>
             <li><a href="contato.html">Fale com a ORIGON</a></li>
+            <li><a href="#" data-whatsapp-link hidden>WhatsApp <span data-whatsapp-numero></span></a></li>
             <li><a href="contato.html" data-quote>Solicitar orçamento</a></li>
           </ul>
         </div>
@@ -191,6 +322,8 @@
   </footer>
 
   <script src="js/config.js"></script>
-  <script src="js/main.js?v=3"></script>
+  <script src="js/main.js?v=6"></script>
+  <script src="js/carrossel.js?v=1"></script>
+  <script src="js/formularios.js?v=3"></script>
 </body>
 </html>

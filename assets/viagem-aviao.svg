@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#061426"/><stop offset=".55" stop-color="#0d3a68"/><stop offset=".85" stop-color="#1e7fcf"/><stop offset="1" stop-color="#ffb877"/>
+    </linearGradient>
+    <radialGradient id="sol" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff3d6"/><stop offset=".4" stop-color="#ffd08a" stop-opacity=".9"/><stop offset="1" stop-color="#ffb877" stop-opacity="0"/></radialGradient>
+    <linearGradient id="m1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16467a"/><stop offset="1" stop-color="#0b2a4d"/></linearGradient>
+    <linearGradient id="m2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c2d54"/><stop offset="1" stop-color="#061a33"/></linearGradient>
+    <mask id="borda"><linearGradient id="gb" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000"/><stop offset=".08" stop-color="#fff"/><stop offset=".92" stop-color="#fff"/><stop offset="1" stop-color="#000"/></linearGradient><rect width="720" height="400" fill="url(#gb)"/></mask>
+    <path id="rota" d="M70 300 C 200 90, 470 40, 640 150"/>
+  </defs>
+  <g mask="url(#borda)">
+    <rect width="720" height="400" fill="url(#ceu)"/>
+    <g fill="#fff" opacity=".8">
+      <circle cx="90" cy="50" r="1.6"/><circle cx="170" cy="90" r="1.2"/><circle cx="260" cy="38" r="1.5"/><circle cx="360" cy="70" r="1.1"/><circle cx="450" cy="30" r="1.6"/><circle cx="560" cy="64" r="1.2"/><circle cx="640" cy="34" r="1.4"/><circle cx="30" cy="120" r="1.1"/>
+    </g>
+    <circle cx="560" cy="290" r="120" fill="url(#sol)"><animate attributeName="r" values="116;128;116" dur="7s" repeatCount="indefinite"/></circle>
+    <circle cx="560" cy="290" r="30" fill="#fff0cc"/>
+    <!-- nuvens -->
+    <g fill="#fff" opacity=".16">
+      <g><ellipse cx="150" cy="150" rx="60" ry="14"/><ellipse cx="190" cy="140" rx="40" ry="14"/><animateTransform attributeName="transform" type="translate" values="0 0;40 0;0 0" dur="18s" repeatCount="indefinite"/></g>
+      <g><ellipse cx="520" cy="110" rx="70" ry="15"/><ellipse cx="560" cy="100" rx="42" ry="14"/><animateTransform attributeName="transform" type="translate" values="0 0;-50 0;0 0" dur="22s" repeatCount="indefinite"/></g>
+      <g><ellipse cx="330" cy="220" rx="80" ry="12"/><ellipse cx="370" cy="212" rx="44" ry="11"/><animateTransform attributeName="transform" type="translate" values="0 0;30 0;0 0" dur="16s" repeatCount="indefinite"/></g>
+    </g>
+    <!-- relevo -->
+    <path d="M0 330 L70 290 L120 316 L200 262 L270 312 L350 280 L430 322 L520 292 L600 326 L680 296 L720 312 L720 400 L0 400Z" fill="url(#m1)"/>
+    <path d="M0 365 L90 335 L170 358 L260 328 L350 360 L450 332 L540 362 L640 338 L720 360 L720 400 L0 400Z" fill="url(#m2)"/>
+    <!-- rota -->
+    <use href="#rota" fill="none" stroke="#9fd3ff" stroke-width="2.4" stroke-dasharray="3 9" stroke-linecap="round" opacity=".85">
+      <animate attributeName="stroke-dashoffset" values="0;-48" dur="3s" repeatCount="indefinite"/>
+    </use>
+    <!-- marcadores -->
+    <g>
+      <circle cx="70" cy="300" r="7" fill="#fff"/><circle cx="70" cy="300" r="14" fill="none" stroke="#fff" stroke-opacity=".6"><animate attributeName="r" values="8;22;8" dur="3.2s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".7;0;.7" dur="3.2s" repeatCount="indefinite"/></circle>
+      <circle cx="640" cy="150" r="7" fill="#ffd08a"/><circle cx="640" cy="150" r="14" fill="none" stroke="#ffd08a" stroke-opacity=".6"><animate attributeName="r" values="8;22;8" dur="3.2s" begin="1.2s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".7;0;.7" dur="3.2s" begin="1.2s" repeatCount="indefinite"/></circle>
+    </g>
+    <!-- avião -->
+    <g>
+      <g transform="scale(1.15)">
+        <path d="M-26 0 L-8 -3 L-12 -22 L-7 -22 L6 -4 L22 -6 C30 -6 32 -1 24 1 L6 3 L-7 22 L-12 22 L-8 3 Z" fill="#ffffff"/>
+        <path d="M-26 0 L-8 -3 L-8 3 Z" fill="#cfe6fb"/>
+        <path d="M-26 0 L-30 -8 L-27 -8 L-20 -2Z" fill="#7cc4f7"/>
+      </g>
+      <animateMotion dur="9s" repeatCount="indefinite" rotate="auto" keyPoints="0;1" keyTimes="0;1" calcMode="linear"><mpath href="#rota"/></animateMotion>
+    </g>
+  </g>
+</svg>
