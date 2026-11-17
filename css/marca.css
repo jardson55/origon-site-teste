@@ -250,3 +250,9 @@ body:has(.nav.is-open) .fab-orcamento { display: none; }
 .cta-band .btn--primary { --pulso: 255,255,255; }
 .btn--primary:hover, .btn--whatsapp:hover { animation-play-state: paused; }
 @media (prefers-reduced-motion: reduce) { .btn--primary, .btn--whatsapp { animation: none; } }
+
+/* Habilitação no Siscomex/RADAR */
+.sub-lista { margin: 18px 0 10px; font-weight: 700; color: var(--navy); }
+.panel ol.lista-simples { padding-left: 1.2em; }
+.panel ol.lista-simples li { margin-bottom: 10px; }
+.panel .fonte { margin: 14px 0 0; font-size: .88rem; }
