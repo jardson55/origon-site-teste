@@ -10,6 +10,7 @@ window.ORIGON_CONFIG = {
   mensagens: {
     geral: "Olá! Vim pelo site da ORIGON e gostaria de mais informações.",
     importacao: "Olá! Vim pelo site da ORIGON e gostaria de solicitar um orçamento de importação da China.",
+    habilitacao: "Olá! Vim pelo site da ORIGON e gostaria de contratar a solicitação de habilitação no Siscomex/RADAR para importar.",
     viagem: "Olá! Vim pelo site da ORIGON e gostaria de uma cotação de viagem.",
     site: "Olá! Vim pelo site da ORIGON e gostaria de solicitar um orçamento de criação ou manutenção de site, ou de CRM."
   }

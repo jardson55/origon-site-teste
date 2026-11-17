@@ -256,3 +256,6 @@ body:has(.nav.is-open) .fab-orcamento { display: none; }
 .panel ol.lista-simples { padding-left: 1.2em; }
 .panel ol.lista-simples li { margin-bottom: 10px; }
 .panel .fonte { margin: 14px 0 0; font-size: .88rem; }
+.panel .intro-painel { margin-bottom: 12px; }
+.panel .fazemos { margin: 16px 0 12px; padding: 14px 16px; border-radius: 12px; background: rgba(30,144,230,.18); border-left: 3px solid #7cc4f7; color: #fff; }
+.panel .fazemos strong { color: #fff; }
