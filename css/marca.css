@@ -242,3 +242,11 @@ body:has(.nav.is-open) .fab-orcamento { display: none; }
 }
 .dados-viagem .form-grid { align-items: end; }
 .dados-viagem .campo { justify-content: flex-end; }
+
+/* Botões principais com pulso suave (azul e verde), como o do WhatsApp */
+.btn--primary, .btn--whatsapp:not([data-empty]) { animation: pulso-suave 3.6s ease-in-out infinite; }
+.btn--primary { --pulso: 2,114,198; }
+.btn--whatsapp { --pulso: 15,122,65; }
+.cta-band .btn--primary { --pulso: 255,255,255; }
+.btn--primary:hover, .btn--whatsapp:hover { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .btn--primary, .btn--whatsapp { animation: none; } }

@@ -9,7 +9,7 @@ window.ORIGON_CONFIG = {
   // Mensagem inicial da conversa, conforme o assunto do botão (data-assunto).
   mensagens: {
     geral: "Olá! Vim pelo site da ORIGON e gostaria de mais informações.",
-    importacao: "Olá! Vim pelo site da ORIGON e gostaria de solicitar um orçamento de importação da China em cotas.",
+    importacao: "Olá! Vim pelo site da ORIGON e gostaria de solicitar um orçamento de importação da China.",
     viagem: "Olá! Vim pelo site da ORIGON e gostaria de uma cotação de viagem.",
     site: "Olá! Vim pelo site da ORIGON e gostaria de solicitar um orçamento de criação ou manutenção de site, ou de CRM."
   }
