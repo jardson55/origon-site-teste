@@ -259,3 +259,15 @@ body:has(.nav.is-open) .fab-orcamento { display: none; }
 .panel .intro-painel { margin-bottom: 12px; }
 .panel .fazemos { margin: 16px 0 12px; padding: 14px 16px; border-radius: 12px; background: rgba(30,144,230,.18); border-left: 3px solid #7cc4f7; color: #fff; }
 .panel .fazemos strong { color: #fff; }
+
+/* Formulário de viagem: grupos de campos por tipo de cotação */
+.grupo[hidden] { display: none; }
+.form-card--viagem input[type="time"], .form-card--viagem input[type="date"] { width: 100%; padding: 12px 14px; min-height: 48px; border: 1px solid #c6d4e3; border-radius: 12px; font: inherit; font-size: 1rem; color: var(--ink); background: #fff; }
+.form-card--viagem input[type="time"]:focus { outline: 3px solid rgba(2,114,198,.28); border-color: var(--blue); }
+.form-card--viagem input:disabled { background: #eef2f6; color: #8a99aa; cursor: not-allowed; }
+.dados-viagem .campo--full[hidden] { display: none; }
+.info-chip { margin: 0 0 4px; padding: 12px 14px; border-radius: 12px; background: rgba(15,122,65,.1); border: 1px solid rgba(15,122,65,.35); color: #0b5a30; font-size: .92rem; grid-column: 1 / -1; }
+.info-chip strong { color: #0b5a30; }
+.viagens .info-chip, .form-card .info-chip { color: #0b5a30 !important; max-width: none; font-size: .92rem; }
+.viagens .info-chip strong { color: #0b5a30; }
+@media (max-width: 560px) { .dados-viagem .campo:has(input[type="time"]) { grid-column: 1 / -1; } }

@@ -21,7 +21,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/importacao.css?v=6">
-  <link rel="stylesheet" href="css/marca.css?v=8">
+  <link rel="stylesheet" href="css/marca.css?v=11">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -127,20 +127,84 @@
           <div class="campo campo--full"><label for="v-nome">Seu nome *</label><input id="v-nome" name="nome" type="text" autocomplete="name" required></div>
           <div class="campo campo--full"><label for="v-tipo">O que você quer cotar?</label>
             <select id="v-tipo" name="tipo"><option>Pacote de viagem</option><option>Passagem aérea</option><option>Passagem de ônibus</option><option>Hotel / hospedagem</option><option>Passagem + hotel</option><option>Aluguel de carro</option><option>Seguro viagem com chip grátis</option><option>Transfer</option></select></div>
-          <fieldset class="dados-viagem"><legend>Dados da viagem</legend>
-            <div class="form-grid">
-              <div class="campo"><label for="v-origem">Cidade ou aeroporto de origem *</label><input id="v-origem" name="origem" type="text" required></div>
-              <div class="campo"><label for="v-destino">Destino *</label><input id="v-destino" name="destino" type="text" required></div>
-              <div class="campo"><label for="v-ida">Data de ida / início</label><input id="v-ida" name="ida" type="date"></div>
-              <div class="campo"><label for="v-volta">Data de volta / término</label><input id="v-volta" name="volta" type="date"></div>
-              <label class="check campo--full"><input type="checkbox" name="somenteIda"> Somente ida / sem data de retorno</label>
-              <div class="campo campo--3"><label for="v-adultos">Adultos</label><input id="v-adultos" name="adultos" type="number" inputmode="numeric" min="1" max="9" value="1"></div>
-              <div class="campo campo--3"><label for="v-criancas">Crianças</label><input id="v-criancas" name="criancas" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
-              <div class="campo campo--3"><label for="v-bebes">Bebês</label><input id="v-bebes" name="bebes" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
-              <div class="campo campo--full"><label for="v-classe">Classe da cabine</label>
-                <select id="v-classe" name="classe"><option>Econômica</option><option>Premium econômica</option><option>Executiva</option><option>Primeira classe</option><option>Ainda não sei</option></select></div>
-              <div class="campo campo--full"><label for="v-idades">Idades das crianças ou dos segurados (opcional)</label><input id="v-idades" name="idades" type="text" placeholder="Ex.: 4 e 9 anos"></div>
-              <label class="check campo--full"><input type="checkbox" name="flexivel"> Posso viajar até 3 dias antes ou depois</label>
+          <fieldset class="dados-viagem" id="dados-viagem"><legend id="dados-legenda">Dados da viagem</legend>
+            <div class="grupo" data-grupo="voo" data-legenda="Dados da viagem">
+              <div class="form-grid">
+                <div class="campo"><label for="v-origem">Cidade ou aeroporto de origem *</label><input id="v-origem" name="origem" type="text" required></div>
+                <div class="campo"><label for="v-destino">Destino *</label><input id="v-destino" name="destino" type="text" required></div>
+                <div class="campo"><label for="v-ida">Data de ida / início</label><input id="v-ida" name="ida" type="date" data-inicio></div>
+                <div class="campo"><label for="v-volta">Data de volta / término</label><input id="v-volta" name="volta" type="date" data-fim></div>
+                <label class="check campo--full"><input type="checkbox" name="somenteIda" data-desativa="v-volta"> Somente ida / sem data de retorno</label>
+                <div class="campo campo--3"><label for="v-adultos">Adultos</label><input id="v-adultos" name="adultos" type="number" inputmode="numeric" min="1" max="9" value="1"></div>
+                <div class="campo campo--3"><label for="v-criancas">Crianças</label><input id="v-criancas" name="criancas" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
+                <div class="campo campo--3"><label for="v-bebes">Bebês</label><input id="v-bebes" name="bebes" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
+                <div class="campo campo--full"><label for="v-classe">Classe da cabine</label><select id="v-classe" name="classe"><option>Econômica</option><option>Premium econômica</option><option>Executiva</option><option>Primeira classe</option><option>Ainda não sei</option></select></div>
+                <div class="campo campo--full"><label for="v-idades">Idades das crianças ou dos segurados (opcional)</label><input id="v-idades" name="idades" type="text" placeholder="Ex.: 4 e 9 anos"></div>
+                <label class="check campo--full"><input type="checkbox" name="flexivel"> Posso viajar até 3 dias antes ou depois</label>
+              </div>
+            </div>
+            <div class="grupo" data-grupo="onibus" data-legenda="Dados da viagem de ônibus" hidden>
+              <div class="form-grid">
+                <div class="campo"><label for="b-origem">Cidade de origem *</label><input id="b-origem" name="b_origem" type="text" required></div>
+                <div class="campo"><label for="b-destino">Destino *</label><input id="b-destino" name="b_destino" type="text" required></div>
+                <div class="campo"><label for="b-ida">Data de ida</label><input id="b-ida" name="b_ida" type="date" data-inicio></div>
+                <div class="campo"><label for="b-volta">Data de volta</label><input id="b-volta" name="b_volta" type="date" data-fim></div>
+                <label class="check campo--full"><input type="checkbox" name="b_somenteIda" data-desativa="b-volta"> Somente ida / sem data de retorno</label>
+                <div class="campo"><label for="b-adultos">Adultos</label><input id="b-adultos" name="b_adultos" type="number" inputmode="numeric" min="1" max="9" value="1"></div>
+                <div class="campo"><label for="b-criancas">Crianças</label><input id="b-criancas" name="b_criancas" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
+                <label class="check campo--full"><input type="checkbox" name="b_flexivel"> Posso viajar até 3 dias antes ou depois</label>
+              </div>
+            </div>
+            <div class="grupo" data-grupo="hotel" data-legenda="Dados da hospedagem" hidden>
+              <div class="form-grid">
+                <div class="campo campo--full"><label for="h-destino">Cidade, região ou hotel desejado *</label><input id="h-destino" name="h_destino" type="text" required></div>
+                <div class="campo"><label for="h-entrada">Data de entrada (check-in)</label><input id="h-entrada" name="h_entrada" type="date" data-inicio></div>
+                <div class="campo"><label for="h-saida">Data de saída (check-out)</label><input id="h-saida" name="h_saida" type="date" data-fim></div>
+                <div class="campo campo--3"><label for="h-quartos">Quartos</label><input id="h-quartos" name="h_quartos" type="number" inputmode="numeric" min="1" max="9" value="1"></div>
+                <div class="campo campo--3"><label for="h-adultos">Adultos</label><input id="h-adultos" name="h_adultos" type="number" inputmode="numeric" min="1" max="9" value="2"></div>
+                <div class="campo campo--3"><label for="h-criancas">Crianças</label><input id="h-criancas" name="h_criancas" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
+                <div class="campo campo--full"><label for="h-idades">Idades das crianças (opcional)</label><input id="h-idades" name="h_idades" type="text" placeholder="Ex.: 4 e 9 anos"></div>
+                <div class="campo campo--full"><label for="h-tipo">Tipo de hospedagem</label><select id="h-tipo" name="h_tipo"><option>Hotel</option><option>Pousada</option><option>Resort</option><option>Apartamento / flat</option><option>Ainda não sei</option></select></div>
+                <label class="check campo--full"><input type="checkbox" name="h_cafe"> Quero café da manhã incluso</label>
+                <label class="check campo--full"><input type="checkbox" name="h_flexivel"> Posso viajar até 3 dias antes ou depois</label>
+              </div>
+            </div>
+            <div class="grupo" data-grupo="carro" data-legenda="Dados do aluguel de carro" hidden>
+              <div class="form-grid">
+                <div class="campo campo--full"><label for="c-retirada">Cidade ou aeroporto de retirada *</label><input id="c-retirada" name="c_retirada" type="text" required></div>
+                <label class="check campo--full"><input type="checkbox" name="c_outroLocal" data-mostra="c-devolucao-campo"> Devolver em outro local</label>
+                <div class="campo campo--full" id="c-devolucao-campo" hidden><label for="c-devolucao">Local de devolução</label><input id="c-devolucao" name="c_devolucao" type="text" disabled></div>
+                <div class="campo"><label for="c-data-ret">Data de retirada</label><input id="c-data-ret" name="c_dataRet" type="date" data-inicio></div>
+                <div class="campo campo--3"><label for="c-hora-ret">Hora de retirada</label><input id="c-hora-ret" name="c_horaRet" type="time"></div>
+                <div class="campo"><label for="c-data-dev">Data de devolução</label><input id="c-data-dev" name="c_dataDev" type="date" data-fim></div>
+                <div class="campo campo--3"><label for="c-hora-dev">Hora de devolução</label><input id="c-hora-dev" name="c_horaDev" type="time"></div>
+                <div class="campo campo--full"><label for="c-categoria">Categoria do carro</label><select id="c-categoria" name="c_categoria"><option>Econômico</option><option>Compacto</option><option>Intermediário</option><option>SUV</option><option>Executivo</option><option>Van / minivan</option><option>Ainda não sei</option></select></div>
+                <div class="campo campo--full"><label for="c-cambio">Câmbio</label><select id="c-cambio" name="c_cambio"><option>Tanto faz</option><option>Automático</option><option>Manual</option></select></div>
+                <label class="check campo--full"><input type="checkbox" name="c_jovem"> O condutor tem menos de 25 anos</label>
+                <label class="check campo--full"><input type="checkbox" name="c_flexivel"> Posso retirar até 3 dias antes ou depois</label>
+              </div>
+            </div>
+            <div class="grupo" data-grupo="seguro" data-legenda="Dados do seguro viagem" hidden>
+              <div class="form-grid">
+                <p class="info-chip campo--full"><strong>Chip grátis:</strong> na compra do seguro viagem, o chip é grátis.</p>
+                <div class="campo campo--full"><label for="s-destino">Destino *</label><input id="s-destino" name="s_destino" type="text" required placeholder="País ou região"></div>
+                <div class="campo"><label for="s-inicio">Data de início da viagem</label><input id="s-inicio" name="s_inicio" type="date" data-inicio></div>
+                <div class="campo"><label for="s-fim">Data de término da viagem</label><input id="s-fim" name="s_fim" type="date" data-fim></div>
+                <div class="campo campo--full"><label for="s-segurados">Número de segurados</label><input id="s-segurados" name="s_segurados" type="number" inputmode="numeric" min="1" max="9" value="1"></div>
+                <div class="campo campo--full"><label for="s-idades">Idade de cada segurado *</label><input id="s-idades" name="s_idades" type="text" required placeholder="Ex.: 35, 33 e 8 anos"></div>
+                <label class="check campo--full"><input type="checkbox" name="s_chip" checked> Quero receber o chip grátis na contratação do seguro</label>
+              </div>
+            </div>
+            <div class="grupo" data-grupo="transfer" data-legenda="Dados do transfer" hidden>
+              <div class="form-grid">
+                <div class="campo campo--full"><label for="t-origem">Local de embarque *</label><input id="t-origem" name="t_origem" type="text" required placeholder="Aeroporto, hotel ou endereço"></div>
+                <div class="campo campo--full"><label for="t-destino">Local de destino *</label><input id="t-destino" name="t_destino" type="text" required placeholder="Aeroporto, hotel ou endereço"></div>
+                <div class="campo"><label for="t-data">Data</label><input id="t-data" name="t_data" type="date"></div>
+                <div class="campo campo--3"><label for="t-hora">Hora</label><input id="t-hora" name="t_hora" type="time"></div>
+                <div class="campo campo--3"><label for="t-passageiros">Passageiros</label><input id="t-passageiros" name="t_passageiros" type="number" inputmode="numeric" min="1" max="9" value="1"></div>
+                <div class="campo campo--3"><label for="t-bagagens">Bagagens</label><input id="t-bagagens" name="t_bagagens" type="number" inputmode="numeric" min="0" max="9" value="0"></div>
+                <label class="check campo--full"><input type="checkbox" name="t_volta"> Preciso também do transfer de volta</label>
+              </div>
             </div>
           </fieldset>
           <div class="campo campo--full campo--obs"><label for="v-obs">Observações (opcional)</label><textarea id="v-obs" name="obs" rows="3" placeholder="Bagagem, hotel preferido, orçamento, outras necessidades..."></textarea></div>
@@ -324,6 +388,6 @@
   <script src="js/config.js?v=2"></script>
   <script src="js/main.js?v=7"></script>
   <script src="js/carrossel.js?v=1"></script>
-  <script src="js/formularios.js?v=3"></script>
+  <script src="js/formularios.js?v=4"></script>
 </body>
 </html>
